@@ -6,36 +6,86 @@ import question1.PileVideException;
 import java.util.Stack;
 
 public class Pile2<T> implements PileI<T>{
-    /** par délégation : utilisation de la class Stack */
     private Stack<T> stk;
-    /** la capacité de la pile */
-    private int capacité;
+    private int capacite;
+    private int ptr;
 
-    /** Création d'une pile.
-     * @param taille la "taille maximale" de la pile, doit être > 0
-     */
     public Pile2(int taille){
-        // à compléter
+        if (taille <= 0)
+          taille = CAPACITE_PAR_DEFAUT;
+        this.capacite = taille;
+        this.ptr = -1;
+        this.stk = new Stack<T>();
+        this.stk.setSize(taille);
     }
 
     public Pile2(){
-        // à compléter
+        this(CAPACITE_PAR_DEFAUT);
     }
 
     public void empiler(T o) throws PilePleineException{
-        // à compléter
+        if(estPleine())
+            throw new PilePleineException();
+        this.ptr ++;
+        this.stk.set(this.ptr, o);
     }
 
     public T depiler() throws PileVideException{
-        // à compléter
+        if(estVide())
+            throw new PileVideException();
+        T temp = stk.elementAt(ptr);
+        stk.set(ptr, null);
+        ptr --;
+        return temp;
     }
 
     public T sommet() throws PileVideException{
-        // à compléter
+        if(estVide())
+            return null;
+        return stk.elementAt(ptr);
     }
-
-    // recopier ici toutes les autres méthodes
-    // qui ne sont pas modifiées en fonction
-    // du type des éléments de la pile
-
-} // Pile2
+    
+    public int capacite(){
+        return this.capacite;
+    }
+    
+    public int taille(){
+        return this.ptr+1;
+    }
+    
+    public boolean estVide(){
+        return this.ptr == -1;
+    }
+    
+    public boolean estPleine(){
+        return this.ptr == capacite-1;
+    }
+    
+    public boolean equals(Object o){
+        if(o instanceof Pile2){
+            if((this.taille() == Pile2.class.cast(o).taille()) &&  (this.capacite() == Pile2.class.cast(o).capacite())){
+                for(int i = 0; i<stk.size(); i++){
+                    if(this.stk.get(i) != Pile2.class.cast(o).stk.get(i)){
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public int hashCode(){
+        return toString().hashCode();
+    }
+    
+    public String toString(){
+        String s = "[";
+        for(int i = ptr; i >= 0; i--){
+            s += stk.get(i);
+            if (i > 0)
+                s+=", ";
+        }
+        return s + "]";
+    }
+} 

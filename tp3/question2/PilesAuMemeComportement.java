@@ -7,12 +7,7 @@ public class PilesAuMemeComportement extends junit.framework.TestCase {
     private question2.PileI p3;
     private question2.PileI p4;
 
-    /**
-     * Met en place les engagements.
-     *
-     * Méthode appelée avant chaque appel de méthode de test.
-     */
-    protected void setUp() // throws java.lang.Exception
+    protected void setUp()
     {
         p1 = new question2.Pile(PileI.CAPACITE_PAR_DEFAUT);
         p2 = new question2.Pile2(PileI.CAPACITE_PAR_DEFAUT);
@@ -20,14 +15,12 @@ public class PilesAuMemeComportement extends junit.framework.TestCase {
         p4 = new question2.Pile4(PileI.CAPACITE_PAR_DEFAUT);
     }
 
-    /**
-     * Supprime les engagements
-     *
-     * Méthode appelée après chaque appel de méthode de test.
-     */
-    protected void tearDown() // throws java.lang.Exception
+    protected void tearDown()
     {
-        //Libérez ici les ressources engagées par setUp()
+        p1=null;
+        p2=null;
+        p3=null;
+        p4=null;
     }
 
     public void test_Sommaire()  throws Exception {
@@ -173,4 +166,3 @@ public class PilesAuMemeComportement extends junit.framework.TestCase {
 
     }
 }
-
