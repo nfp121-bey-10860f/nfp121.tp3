@@ -64,19 +64,19 @@ public class Pile2 implements PileI {
         return s + "]";
     }
 
-    public boolean equals(Object o) {
-        if(o instanceof Pile2){
-            if((this.taille() == Pile2.class.cast(o).taille()) &&  (this.capacite() == Pile2.class.cast(o).capacite())){
-                for(int i = 0; i<stk.size(); i++){
-                    if(this.stk.get(i) != Pile2.class.cast(o).stk.get(i)){
-                        return false;
-                    }
-                }
-                return true;
-            }
-        }
-        return false;
-    }
+    // public boolean equals(Object o) {
+        // if(o instanceof Pile2){
+            // if((this.taille() == Pile2.class.cast(o).taille()) &&  (this.capacite() == Pile2.class.cast(o).capacite())){
+                // for(int i = 0; i<stk.size(); i++){
+                    // if(this.stk.get(i) != Pile2.class.cast(o).stk.get(i)){
+                        // return false;
+                    // }
+                // }
+                // return true;
+            // }
+        // }
+        // return false;
+    // }
 // public boolean equals(Object o) {
     // if (o instanceof PileI) {
       // PileI p = (PileI) o;
@@ -85,9 +85,9 @@ public class Pile2 implements PileI {
     // } else
       // return false;
     // }
-    // public boolean equals(Object o) {
-    // return this.toString().equals(o.toString());
-    // }
+    public boolean equals(Object o) {
+    return this.toString().equals(o.toString());
+    }
     public int hashCode() {
         return toString().hashCode();
     }

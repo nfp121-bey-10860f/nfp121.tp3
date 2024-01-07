@@ -99,23 +99,23 @@ public class Pile4 implements PileI, Cloneable {
         return s + "]";
     }
 
-    public boolean equals(Object o) {
-        if (o instanceof Pile4) {
-            if((this.taille() == Pile4.class.cast(o).taille()) &&  (this.capacite() == Pile4.class.cast(o).capacite())){
-                Maillon temp = stk;
-                Maillon temp1 = Pile4.class.cast(o).stk;
-                while(temp != null && temp1 != null){
-                    if(temp.element() != temp1.element()){
-                        return false;
-                    }
-                    temp = temp.suivant();
-                    temp1 = temp1.suivant();
-                }
-                return true;
-            }
-        }
-        return false;
-    }
+    // public boolean equals(Object o) {
+        // if (o instanceof Pile4) {
+            // if((this.taille() == Pile4.class.cast(o).taille()) &&  (this.capacite() == Pile4.class.cast(o).capacite())){
+                // Maillon temp = stk;
+                // Maillon temp1 = Pile4.class.cast(o).stk;
+                // while(temp != null && temp1 != null){
+                    // if(temp.element() != temp1.element()){
+                        // return false;
+                    // }
+                    // temp = temp.suivant();
+                    // temp1 = temp1.suivant();
+                // }
+                // return true;
+            // }
+        // }
+        // return false;
+    // }
 // public boolean equals(Object o) {
     // if (o instanceof PileI) {
       // PileI p = (PileI) o;
@@ -124,9 +124,9 @@ public class Pile4 implements PileI, Cloneable {
     // } else
       // return false;
     // }
-    // public boolean equals(Object o) {
-    // return this.toString().equals(o.toString());
-    // }
+    public boolean equals(Object o) {
+    return this.toString().equals(o.toString());
+    }
     public int capacite() {
         return this.capacite;
     }

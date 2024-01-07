@@ -18,7 +18,7 @@ public class UneUtilisation {
         try {
             p1.empiler(new PolygoneRegulier(5,100)); 
             
-            String s = (String)p1.depiler();
+            String s = (String)p1.dépiler();
             
         } catch (Exception e) {
             e.printStackTrace();

@@ -72,19 +72,19 @@ public class Pile3 implements PileI {
         return sb.toString();
     }
 
-    public boolean equals(Object o) {
-        if(o instanceof Pile3){
-            if((this.taille() == Pile3.class.cast(o).taille()) &&  (this.capacite() == Pile3.class.cast(o).capacite())){
-                for(int i = 0; i<v.size(); i++){
-                    if(this.v.get(i) != Pile3.class.cast(o).v.get(i)){
-                        return false;
-                    }
-                }
-                return true;
-            }
-        }
-        return false;
-    }
+    // public boolean equals(Object o) {
+        // if(o instanceof Pile3){
+            // if((this.taille() == Pile3.class.cast(o).taille()) &&  (this.capacite() == Pile3.class.cast(o).capacite())){
+                // for(int i = 0; i<v.size(); i++){
+                    // if(this.v.get(i) != Pile3.class.cast(o).v.get(i)){
+                        // return false;
+                    // }
+                // }
+                // return true;
+            // }
+        // }
+        // return false;
+    // }
 // public boolean equals(Object o) {
     // if (o instanceof PileI) {
       // PileI p = (PileI) o;
@@ -93,9 +93,9 @@ public class Pile3 implements PileI {
     // } else
       // return false;
     // }
-    // public boolean equals(Object o) {
-    // return this.toString().equals(o.toString());
-    // }
+    public boolean equals(Object o) {
+    return this.toString().equals(o.toString());
+    }
     public int hashCode() {
         return toString().hashCode();
     }

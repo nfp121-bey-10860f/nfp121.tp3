@@ -53,19 +53,19 @@ public class Pile implements PileI {
         return ptr == zone.length;
     }
 
-    public boolean equals(Object o) {
-        if(o instanceof Pile){
-            if((this.taille() == Pile.class.cast(o).taille()) &&  (this.capacite() == Pile.class.cast(o).capacite())){
-                for(int i = 0; i<zone.length; i++){
-                    if(this.zone[i] != Pile.class.cast(o).zone[i]){
-                        return false;
-                    }
-                }
-                return true;
-            }
-        }
-        return false;
-    }
+    // public boolean equals(Object o) {
+        // if(o instanceof Pile){
+            // if((this.taille() == Pile.class.cast(o).taille()) &&  (this.capacite() == Pile.class.cast(o).capacite())){
+                // for(int i = 0; i<zone.length; i++){
+                    // if(this.zone[i] != Pile.class.cast(o).zone[i]){
+                        // return false;
+                    // }
+                // }
+                // return true;
+            // }
+        // }
+        // return false;
+    // }
     // public boolean equals(Object o) {
     // if (o instanceof PileI) {
       // PileI p = (PileI) o;
@@ -74,9 +74,9 @@ public class Pile implements PileI {
     // } else
       // return false;
     // }
-    // public boolean equals(Object o) {
-    // return this.toString().equals(o.toString());
-    // }
+    public boolean equals(Object o) {
+    return this.toString().equals(o.toString());
+    }
     public int hashCode() {
         return toString().hashCode();
     }

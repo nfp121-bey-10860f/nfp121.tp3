@@ -9,14 +9,14 @@ public class PileTest extends junit.framework.TestCase {
 
     protected void setUp()
     {
-        System.out.println("Debut test");
+        
         pile1 = new Pile(3);
     }
 
     protected void tearDown()
     {
         pile1 = null;
-        System.out.println("Fin Test");
+       
     }
 
     public void testEncourageant(){
